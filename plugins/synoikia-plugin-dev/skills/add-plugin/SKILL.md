@@ -5,7 +5,7 @@ description: Scaffold a new Synoikia plugin under plugins/<id> with `pnpm new`, 
 
 # Add a plugin
 
-Run the change with NoVibe's `novibe` skill when the repository enables it. Write the code as the `plugin-development` skill says. Background: Synoikia's plugin authoring guide (`https://github.com/via-justa/synoikia-core/blob/main/docs/plugin-authoring.md`).
+Run the change with NoVibe's `novibe` skill when the repository enables it. Write the code as the `plugin-development` skill says. Background: Synoikia's plugin authoring guide (`https://github.com/synoikia-org/synoikia-core/blob/main/docs/plugin-authoring.md`).
 
 ## 1. Settle the basics
 

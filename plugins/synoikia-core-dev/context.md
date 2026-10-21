@@ -7,7 +7,7 @@ These rules apply to the Synoikia core repository. Its `CLAUDE.md` gives the lay
 Security lives in core, once. A plugin only describes its upstream API. It never decides what is allowed.
 
 - Do not add a plugin-side switch for anything that the gate, the sandbox, the approvals, the redaction or the auth already decide.
-- Core stays plugin-agnostic. Do not name a plugin, such as TrueNAS, Seerr or Home Assistant, in core code, tests or UI placeholders. The plugins live in `via-justa/synoikia-core-plugins`.
+- Core stays plugin-agnostic. Do not name a plugin, such as TrueNAS, Seerr or Home Assistant, in core code, tests or UI placeholders. The plugins live in `synoikia-org/synoikia-core-plugins`.
 - SDK code is bundled into every plugin. So `rules.ts`, `http-client.ts`, `openapi.ts` and `static-catalog.ts` decide what plugins tell core. Treat a change there as a security change.
 - The security decisions of core are ADRs in `docs/adrs/`. Read the ADRs of a module before you change it. Other facts, such as the tables and the Admin API routes, are in `docs/reference.md`.
 
