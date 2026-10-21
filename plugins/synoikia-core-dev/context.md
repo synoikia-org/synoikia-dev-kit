@@ -9,7 +9,14 @@ Security lives in core, once. A plugin only describes its upstream API. It never
 - Do not add a plugin-side switch for anything that the gate, the sandbox, the approvals, the redaction or the auth already decide.
 - Core stays plugin-agnostic. Do not name a plugin, such as TrueNAS, Seerr or Home Assistant, in core code, tests or UI placeholders. The plugins live in `via-justa/synoikia-core-plugins`.
 - SDK code is bundled into every plugin. So `rules.ts`, `http-client.ts`, `openapi.ts` and `static-catalog.ts` decide what plugins tell core. Treat a change there as a security change.
-- The security decisions of `gate/`, `sandbox/`, `plugins/` and `auth/` under `packages/core/src` are ADRs in `docs/adrs/`. Read them before you change that module. While a module still has its `README.md`, read that instead.
+- The security decisions of core are ADRs in `docs/adrs/`. Read the ADRs of a module before you change it. Other facts, such as the tables and the Admin API routes, are in `docs/reference.md`.
+
+  | Part | ADRs |
+  |---|---|
+  | `gate/`, `sandbox/`, `approvals/`, redaction | ADR-0003 to ADR-0007 |
+  | `auth/`, roles | ADR-0008 to ADR-0010 |
+  | `plugins/`, the SDK contract | ADR-0011 to ADR-0014 |
+  | The listeners, secrets, data writers, portal widgets, notifications | ADR-0015 to ADR-0019 |
 
 ## Skills
 
