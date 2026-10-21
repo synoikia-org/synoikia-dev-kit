@@ -1,0 +1,9 @@
+{
+  "name": "synoikia-plugin-dev",
+  "description": "Developing Synoikia plugins: add-plugin, plugin-development and release-plugin skills, the plugin security reviewer and the plugin repository rules.",
+  "author": {
+    "name": "synoikia-org"
+  },
+  "repository": "https://github.com/synoikia-org/synoikia-dev-kit",
+  "license": "MIT"
+}

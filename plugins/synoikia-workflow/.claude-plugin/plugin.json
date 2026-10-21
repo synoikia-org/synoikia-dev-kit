@@ -1,0 +1,9 @@
+{
+  "name": "synoikia-workflow",
+  "description": "The spec-first workflow of every Synoikia repository: change-workflow, requirements-engineer, architect, developer and technical-writing, with the branch, path and format hooks.",
+  "author": {
+    "name": "synoikia-org"
+  },
+  "repository": "https://github.com/synoikia-org/synoikia-dev-kit",
+  "license": "MIT"
+}

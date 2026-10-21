@@ -1,0 +1,26 @@
+{
+  "name": "synoikia-dev-kit",
+  "owner": {
+    "name": "synoikia-org"
+  },
+  "metadata": {
+    "description": "Agent plugins to develop and maintain Synoikia core and plugins."
+  },
+  "plugins": [
+    {
+      "name": "synoikia-workflow",
+      "source": "./plugins/synoikia-workflow",
+      "description": "The spec-first workflow of every Synoikia repository: change-workflow, requirements-engineer, architect, developer and technical-writing, with the branch, path and format hooks."
+    },
+    {
+      "name": "synoikia-core-dev",
+      "source": "./plugins/synoikia-core-dev",
+      "description": "Developing Synoikia core: backend, admin portal and database skills, the core security reviewer and the core rules."
+    },
+    {
+      "name": "synoikia-plugin-dev",
+      "source": "./plugins/synoikia-plugin-dev",
+      "description": "Developing Synoikia plugins: add-plugin, plugin-development and release-plugin skills, the plugin security reviewer and the plugin repository rules."
+    }
+  ]
+}
