@@ -1,0 +1,21 @@
+{
+  "name": "synoikia-dev-kit",
+  "owner": {
+    "name": "synoikia-org"
+  },
+  "metadata": {
+    "description": "Claude Code plugins with the Synoikia specifics for core and plugin repositories. NoVibe runs the workflow."
+  },
+  "plugins": [
+    {
+      "name": "synoikia-core-dev",
+      "source": "./plugins/synoikia-core-dev",
+      "description": "Developing Synoikia core next to NoVibe: backend, admin portal, database, release and writing skills, the core security reviewer, the path and format hooks, and the core rules."
+    },
+    {
+      "name": "synoikia-plugin-dev",
+      "source": "./plugins/synoikia-plugin-dev",
+      "description": "Developing Synoikia plugins next to NoVibe: add-plugin, plugin-development, release-plugin and writing skills, the plugin security reviewer, the path and format hooks, and the plugin repository rules."
+    }
+  ]
+}
