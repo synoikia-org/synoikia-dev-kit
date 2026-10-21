@@ -7,7 +7,7 @@
 
 <p align="center">
   <strong>The dev kit for Synoikia.</strong><br />
-  Claude Code plugins to develop and maintain <a href="https://github.com/via-justa/synoikia-core">Synoikia core</a> and Synoikia plugins.
+  Claude Code plugins to develop and maintain <a href="https://github.com/synoikia-org/synoikia-core">Synoikia core</a> and Synoikia plugins.
 </p>
 
 # synoikia-dev-kit
