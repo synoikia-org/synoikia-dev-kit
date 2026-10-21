@@ -20,6 +20,8 @@ Vitest, one `test/` directory per package (`packages/core/test/*.test.ts`, `pack
 - **Network:** `startFakeHttp` from `@synoikia/core/testing` for an upstream; never reach the real network.
 - Add a helper to `test/helpers.ts` when a second test file needs it, not before.
 - **`isolated-vm`** needs `--no-node-snapshot`. The vitest config and `pnpm start` pass it. Any new way of running core must pass it too.
+- Tests resolve workspace packages to their TypeScript sources, through the `synoikia-source` export condition. So `pnpm test` needs no build first.
+- `packages/core/vitest.config.ts` sets coverage floors for `gate/`, `auth/`, `approvals/`, `sandbox/` and `crypto/`. A change there comes with tests that keep coverage above them. `pnpm --filter @synoikia/core test:coverage` checks them.
 
 ## Rules
 

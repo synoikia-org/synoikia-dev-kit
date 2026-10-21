@@ -12,19 +12,9 @@ description: >-
 
 `@synoikia/plugin-sdk`, `@synoikia/core` and `@synoikia/create-plugin` publish to npm when their `version` changes on `main`. The Docker image uses the root `package.json` version, apart from the package versions.
 
-## What to bump
+## Steps
 
-A pull request bumps the version of each published package, and of the image, whose shipped content it changes, in the same pull request. Docs-, test- and CI-only changes bump nothing.
-
-| Version | Bump when the pull request changes |
-|---|---|
-| `@synoikia/core` | `packages/core/src`, including `testing/`, or its runtime dependencies |
-| `@synoikia/plugin-sdk` | `packages/plugin-sdk/src` or its dependencies |
-| `@synoikia/create-plugin` | its own files. Also a patch whenever core or the SDK takes a minor bump, because its `workspace:^` ranges are packed with the minor pinned |
-| Root `package.json` (the image) | anything that the image ships: core, the admin UI, the `Dockerfile` and image dependencies. Bump it by the same step as the largest package bump |
-
-## How much
-
-- While at 0.x, a breaking change or a new feature bumps the minor, and a fix bumps the patch.
-- Name the new versions in the pull request title, for example "(core 0.7.0, image 0.5.0)".
-- A breaking change to the SDK or to `@synoikia/core/testing` breaks every plugin repository, so call it out in the pull request.
+1. Read `DEVELOPMENT.md` › Which versions a change bumps. It is the rule for each package and for the image.
+2. Bump each `version` that the rule names, in the same pull request as the change.
+3. Name the new versions in the pull request title, for example "(core 0.7.0, image 0.5.0)".
+4. If the change breaks the SDK or `@synoikia/core/testing`, call it out in the pull request. It breaks every plugin repository.
