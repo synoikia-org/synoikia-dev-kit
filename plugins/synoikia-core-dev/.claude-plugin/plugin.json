@@ -1,0 +1,9 @@
+{
+  "name": "synoikia-core-dev",
+  "description": "Developing Synoikia core next to NoVibe: backend, admin portal, database, release and writing skills, the core security reviewer, the path and format hooks, and the core rules.",
+  "author": {
+    "name": "synoikia-org"
+  },
+  "repository": "https://github.com/synoikia-org/synoikia-dev-kit",
+  "license": "MIT"
+}
