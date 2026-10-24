@@ -26,7 +26,7 @@ Load the skill before you write or review that work. `plugin.yaml`, `manifest.js
 When the repository enables the NoVibe plugin (`novibe@nv-plugins`), its `novibe` skill runs every change: `requirements-engineer`, then `architect`, then `developer`, one slice for each pull request. The Synoikia plugins repository enables it. Synoikia adds these rules to it:
 
 - **Prose.** All prose follows the `technical-writing` skill: feature files, ADRs, model descriptions, documents, commit messages and pull request descriptions. Where the repository has the `prose` guard in its git hooks, the guard checks it.
-- **Security audit.** When the slice crosses a trust boundary, run this plugin's `security-reviewer` agent as well as Cloudflare's `security-audit`. One line covers both: `Security audit: <boundary and findings>` or `Security audit: none. <why>`.
+- **Security audit.** When the slice crosses a trust boundary, run this plugin's `security-reviewer` agent as well as Cloudflare's `security-audit`. The `security-audit` plugin of this marketplace supplies it. One line covers both: `Security audit: <boundary and findings>` or `Security audit: none. <why>`.
 - **Pull request.** After the `spec:` commit, open the pull request as a draft. Watch it with `subscribe_pr_activity` until it merges or closes.
 - **Trailers.** Do not add `Co-Authored-By` or `Claude-Session` trailers to commit messages. Do not add a "Generated with Claude Code" line to pull request descriptions.
 

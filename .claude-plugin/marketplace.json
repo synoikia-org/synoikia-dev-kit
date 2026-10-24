@@ -16,6 +16,17 @@
       "name": "synoikia-plugin-dev",
       "source": "./plugins/synoikia-plugin-dev",
       "description": "Developing Synoikia plugins next to NoVibe: add-plugin, plugin-development, release-plugin and writing skills, the plugin security reviewer, the path and format hooks, and the plugin repository rules."
+    },
+    {
+      "name": "security-audit",
+      "source": {
+        "source": "github",
+        "repo": "cloudflare/security-audit-skill",
+        "sha": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8"
+      },
+      "strict": false,
+      "skills": ["./skills/security-audit"],
+      "description": "Cloudflare's security-audit skill, unchanged from upstream and pinned to one commit. NoVibe's developer step runs it when a slice crosses a trust boundary."
     }
   ]
 }

@@ -20,6 +20,7 @@ The repository is a Claude Code plugin marketplace named `synoikia-dev-kit`.
 |---|---|---|
 | `synoikia-core-dev` | Synoikia core | The `core-development`, `vue-development`, `db-migration`, `core-release` and `technical-writing` skills. The core `security-reviewer` agent. Hooks that guard protected paths and run Prettier after each edit. The core rules. |
 | `synoikia-plugin-dev` | A Synoikia plugin repository | The `add-plugin`, `plugin-development`, `release-plugin` and `technical-writing` skills. The plugin `security-reviewer` agent. The same hooks. The plugin repository rules. |
+| `security-audit` | Both | Cloudflare's [`security-audit`](https://github.com/cloudflare/security-audit-skill) skill, unchanged. The marketplace takes it from Cloudflare's repository at one pinned commit. |
 
 Each plugin adds its rules (`context.md`) to every session through a `SessionStart` hook. So the rules apply like a `CLAUDE.md`. A repository's own `CLAUDE.md` keeps only its facts: its layout, its commands and its packages.
 
@@ -30,14 +31,14 @@ Each plugin adds its rules (`context.md`) to every session through a `SessionSta
 These plugins add only what is specific to Synoikia:
 
 - The `technical-writing` rules for all prose, which a `prose` guard in the git hooks checks.
-- The `security-reviewer` agent, next to the Cloudflare `security-audit` that NoVibe runs. One `Security audit:` line covers both.
+- The `security-reviewer` agent, next to the Cloudflare `security-audit` that NoVibe runs. The `security-audit` plugin supplies that skill. One `Security audit:` line covers both.
 - A draft pull request after the `spec:` commit, watched until it merges.
 - No `Co-Authored-By` or `Claude-Session` trailers, and no "Generated with Claude Code" line.
 - The skills for core, the admin portal, the database, releases and plugins.
 
 ## Use the plugins
 
-A repository adds both marketplaces and its plugins in its `.claude/settings.json`. The core repository enables `synoikia-core-dev`, and the plugins repository enables `synoikia-plugin-dev`:
+A repository adds both marketplaces and its plugins in its `.claude/settings.json`. The core repository enables `synoikia-core-dev`, and the plugins repository enables `synoikia-plugin-dev`. Both enable `security-audit`:
 
 ```json
 {
@@ -51,7 +52,8 @@ A repository adds both marketplaces and its plugins in its `.claude/settings.jso
   },
   "enabledPlugins": {
     "novibe@nv-plugins": true,
-    "synoikia-core-dev@synoikia-dev-kit": true
+    "synoikia-core-dev@synoikia-dev-kit": true,
+    "security-audit@synoikia-dev-kit": true
   }
 }
 ```
@@ -85,6 +87,8 @@ claude plugin validate .
 claude plugin validate plugins/<plugin>
 claude --plugin-dir plugins/<plugin> plugin details <plugin>
 ```
+
+To update the `security-audit` plugin, set its `sha` in `.claude-plugin/marketplace.json` to a newer commit of [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill). Then run `claude plugin marketplace update synoikia-dev-kit` and check it with `claude plugin details security-audit@synoikia-dev-kit`.
 
 The plugins have no version, so that each commit is an update. The validator warns about the missing version. So do not use `--strict`, which treats that warning as an error.
 
