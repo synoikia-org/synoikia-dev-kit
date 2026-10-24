@@ -15,7 +15,7 @@ description: >-
 
 Core is a Node 22 ESM server: Hono for HTTP, Drizzle on SQLite, isolated-vm for the sandbox, zod at every boundary. New code must look like the code around it. The priorities are simplicity, reuse and efficiency: one shared way to do each thing, the smallest change that does the job, and no new dependency for what a few lines already do.
 
-The Synoikia core rules of this plugin hold the repo rules (security lives in core, security review). NoVibe's `novibe` skill runs the change, and the `core-release` skill gives the version bumps. This skill is how to write the code. Load a reference only when the task touches its area:
+The Synoikia core rules of this plugin hold the repo rules (security lives in core, security review). NoVibe's `novibe` skill runs the change, and the `core-release` skill gives the release labels. This skill is how to write the code. Load a reference only when the task touches its area:
 
 | Task touches                                                                          | Read                              |
 | ------------------------------------------------------------------------------------- | --------------------------------- |
@@ -48,7 +48,7 @@ pnpm --filter @synoikia/core exec vitest run test/<file>.test.ts   # the files y
 pnpm --filter @synoikia/core test:coverage                          # when gate/, auth/, approvals/, sandbox/ or crypto/ changed
 ```
 
-Then run the `security-reviewer` subagent when the change crosses a trust boundary, and bump versions as the `core-release` skill says.
+Then run the `security-reviewer` subagent when the change crosses a trust boundary, and label the pull request as the `core-release` skill says.
 
 ## Reviewing
 

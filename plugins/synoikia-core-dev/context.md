@@ -25,7 +25,7 @@ Security lives in core, once. A plugin only describes its upstream API. It never
 | Backend code or tests in `packages/core`, `packages/plugin-sdk` or `packages/create-plugin` | `core-development` |
 | Admin portal code or tests: any `.vue` file or `packages/admin-ui` | `vue-development` |
 | A change to the database schema or its data | `db-migration` |
-| The version bumps of a pull request that changes shipped content | `core-release` |
+| The release labels of a pull request that changes shipped content, or a release | `core-release` |
 | Prose of any kind | `technical-writing` |
 
 Load the skill before you write or review that work.
