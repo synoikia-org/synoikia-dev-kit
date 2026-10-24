@@ -88,7 +88,7 @@ claude plugin validate plugins/<plugin>
 claude --plugin-dir plugins/<plugin> plugin details <plugin>
 ```
 
-To update the `security-audit` plugin, set its `sha` in `.claude-plugin/marketplace.json` to a newer commit of [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill). Then run `claude plugin marketplace update synoikia-dev-kit` and check it with `claude plugin details security-audit@synoikia-dev-kit`.
+Each Monday, the `Update security-audit` workflow compares the `sha` of the `security-audit` plugin with the `main` branch of [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill). When upstream moves, it opens a pull request from `update/security-audit` with the new `sha` and a link to the upstream diff. Read that diff before you merge. To try the new pin before the merge, check out that branch, add it as a local marketplace with `claude plugin marketplace add <path>`, and run `claude plugin details security-audit@synoikia-dev-kit`.
 
 The plugins have no version, so that each commit is an update. The validator warns about the missing version. So do not use `--strict`, which treats that warning as an error.
 
