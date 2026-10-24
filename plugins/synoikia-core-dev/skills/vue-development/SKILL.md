@@ -64,7 +64,7 @@ pnpm --filter @synoikia/admin-ui test
 
 ## Before the pull request
 
-Run the `security-reviewer` agent when the change crosses a trust boundary, such as auth, sessions or rendering untrusted text. A portal change ships in the image, so bump the root `package.json` version as the `core-release` skill says.
+Run the `security-reviewer` agent when the change crosses a trust boundary, such as auth, sessions or rendering untrusted text. A portal change ships in the image, so label the pull request as the `core-release` skill says.
 
 Before the pull request goes ready, send screenshots of each changed page and state. Cover light and dark mode. Cover desktop and mobile width when the layout changed.
 
