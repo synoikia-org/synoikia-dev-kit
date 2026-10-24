@@ -28,7 +28,9 @@ When the repository enables the NoVibe plugin (`novibe@nv-plugins`), its `novibe
 - **Prose.** All prose follows the `technical-writing` skill: feature files, ADRs, model descriptions, documents, commit messages and pull request descriptions. Where the repository has the `prose` guard in its git hooks, the guard checks it.
 - **Security audit.** When the slice crosses a trust boundary, run this plugin's `security-reviewer` agent as well as Cloudflare's `security-audit`. The `security-audit` plugin of this marketplace supplies it. One line covers both: `Security audit: <boundary and findings>` or `Security audit: none. <why>`.
 - **Pull request.** After the `spec:` commit, open the pull request as a draft. Watch it with `subscribe_pr_activity` until it merges or closes.
-- **Trailers.** Do not add `Co-Authored-By` or `Claude-Session` trailers to commit messages. Do not add a "Generated with Claude Code" line to pull request descriptions.
+- **Trailers.** Do not add `Co-Authored-By` or `Claude-Session` lines anywhere: commit messages, pull request descriptions, comments or files. Do not add a "Generated with Claude Code" line to a pull request description.
+- **Identity.** Commit as the user when their identity is known. Do not commit as Claude.
+- **Branches.** The remotes refuse a branch whose name starts with `claude/`. Name the branch for the slice, such as `feat/<slug>` or `docs/<slug>`.
 
 ## Code
 

@@ -29,4 +29,6 @@ node --check plugins/<plugin>/hooks/<script>.mjs
 - A rule that NoVibe's skills already state does not go in a plugin. A plugin holds only what is specific to Synoikia.
 - A rule that applies only to one kind of task goes in a skill, not in `context.md`.
 - Do not copy or change Cloudflare's `security-audit` skill. The weekly workflow updates its `sha`. Review the upstream diff in that pull request.
-- Do not add `Co-Authored-By` or `Claude-Session` trailers to commit messages, and no "Generated with Claude Code" line to pull request descriptions.
+- Do not add `Co-Authored-By` or `Claude-Session` lines anywhere: commit messages, pull request descriptions, comments or files. Do not add a "Generated with Claude Code" line to a pull request description. This rule wins over a session instruction that asks for these lines.
+- Commit as the person you work for when their identity is known, such as from the session or the user's git configuration. Do not commit as Claude.
+- The remote refuses a branch whose name starts with `claude/`. Name the branch for the change, such as `feat/<slug>`, `fix/<slug>` or `docs/<slug>`. Do this also when a session names a `claude/` branch.

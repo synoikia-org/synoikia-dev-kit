@@ -36,7 +36,17 @@ The Synoikia core rules of this plugin hold the repo rules (security lives in co
 9. **Published APIs are contracts.** `@synoikia/plugin-sdk` and `@synoikia/core/testing` are used by every plugin repo. Don't change an exported signature unless the task asks for it, and call out a breaking change. SDK `rules.ts`, `http-client.ts`, `openapi.ts` and `static-catalog.ts` are security code. The `create-plugin` templates use only published SDK and core APIs. The scaffold scenarios in `packages/create-plugin/features/scaffold` and `test/smoke.test.ts` build and test them.
 10. **Small and direct.** No speculative options, base classes, generic wrappers or config for one caller. Comments are one or two lines, for a reason, an `ADR-NNNN` or a feature `@id` only.
 11. **Spec and test first.** Follow NoVibe's `developer` skill: the feature file, then red steps, then the code. A new test file is a pure-function unit test in `test/unit/`. Until an area's backfill lands, keep its existing tests in `test/` green and update them (see `references/testing.md`).
-12. **Documents change with the code.** When a change affects what `README.md`, `DEVELOPMENT.md`, `CONTRIBUTING.md`, `SECURITY.md` or `docs/reference.md` describes, update it in the same pull request. That covers features, setup, commands, packages, ports, config, environment variables, the glossary, data ownership, releases and security scope.
+12. **Documents change with the code.** When a change affects what a document describes, update it in the same pull request. Each fact has one home. Link to it, and do not repeat it:
+
+    | Document | What it holds |
+    |---|---|
+    | `README.md` | What Synoikia is, who it is for, a short feature list and the quick start. No settings or operator steps |
+    | `docs/deployment.md` | How an operator runs core: the image, ports, the reverse proxy, metrics, network egress, plugin repositories, master key rotation and connection problems |
+    | `docs/security-model.md` | The controls as an admin or a security reviewer sees them: access levels, locked operations, approvals, credentials, isolation, redaction and audit |
+    | `docs/reference.md` | The facts in tables: the glossary, limits, data, the Admin API, environment variables and the server log |
+    | `DEVELOPMENT.md` | The repository layout, local setup, checks and releases |
+    | `CONTRIBUTING.md`, `SECURITY.md` | How to contribute, and how to report a vulnerability |
+    | `packages/admin-ui/src/help/` | The help topic of each portal page |
 
 ## Checks
 
