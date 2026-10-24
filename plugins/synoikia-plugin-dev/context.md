@@ -34,7 +34,8 @@ When the repository enables the NoVibe plugin (`novibe@nv-plugins`), its `novibe
   2. Run the `architect` step. When the interview ends, commit its result as `arch:` and push.
   3. Stop. Start the `developer` step only when the driver tells you to.
   4. Watch the pull request with `subscribe_pr_activity` until it merges or closes.
-  5. Mark the pull request ready when the slice is complete and CI passes on its head.
+  5. Mark the pull request ready when the slice is complete, CI passes on its head, and both security reviews have run. The `Security audit:` line names their result.
+  6. When a push to `main` makes the pull request conflict, mark it as a draft. Merge `main`, resolve the conflicts and push. Mark it ready again when step 5 holds.
 - **Trailers.** Do not add `Co-Authored-By` or `Claude-Session` lines anywhere: commit messages, pull request descriptions, comments or files. Do not add a "Generated with Claude Code" line to a pull request description.
 - **Identity.** Commit as the user when their identity is known. Do not commit as Claude.
 - **Branches.** The remotes refuse a branch whose name starts with `claude/`. Name the branch for the slice, such as `feat/<slug>` or `docs/<slug>`.
