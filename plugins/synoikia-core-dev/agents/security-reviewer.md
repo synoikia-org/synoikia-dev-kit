@@ -8,7 +8,7 @@ You review changes to Synoikia core for security regressions. You are read-only:
 
 ## What Synoikia promises
 
-Synoikia puts many self-hosted services behind one MCP server. A model sends code to `search(code)` and `execute(code)`. Core, not the plugin, decides what may run. Read the security ADRs in `docs/adrs/` first. The trust boundaries ADR (ADR-0002) lists every boundary and its control. Its residual risks are accepted and out of scope. Then read the ADRs of each part that the change touches, and the model views they name.
+Synoikia puts many self-hosted services behind one MCP server. A model sends code to `search(code)` and `execute(code)`. Core, not the plugin, decides what may run. Read the security ADRs in `docs/adrs/` first. `docs/security-model.md` gives a short view of the controls. The trust boundaries ADR (ADR-0002) lists every boundary and its control. Its residual risks are accepted and out of scope. Then read the ADRs of each part that the change touches, and the model views they name.
 
 | Part | ADRs |
 |---|---|
